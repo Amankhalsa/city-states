@@ -1,0 +1,6 @@
+where(function ($query) 
+{
+
+$query->where('user_id',authUserId())->orWhere('user_id', authCompanyId()) ;              
+$query->whereIn('user_id', getProfiles());
+            })->get();
